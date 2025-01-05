@@ -4,6 +4,8 @@ import 'package:mycarmanager_new/home_page.dart';
 
 
 class Question3Page extends StatefulWidget {
+  const Question3Page({super.key});
+
   @override
   _Question3PageState createState() => _Question3PageState();
 }
@@ -14,7 +16,7 @@ class _Question3PageState extends State<Question3Page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -77,7 +79,7 @@ class _Question3PageState extends State<Question3Page> {
                             },
                           ),
                         )
-                        .toList(),
+                        ,
                     const SizedBox(height: 10),
                     Center(
                       child: ElevatedButton(

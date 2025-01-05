@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  primaryColor: Colors.blue,
+  primaryColor: Colors.deepPurple,
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.deepPurple,
     titleTextStyle: TextStyle(color: Colors.white, fontSize: 18),
   ),
   textTheme: TextTheme(

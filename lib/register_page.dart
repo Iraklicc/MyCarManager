@@ -44,13 +44,13 @@ class _RegisterPageState extends State<RegisterPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(28),
                 image: const DecorationImage(
-                  image: AssetImage('assets/carphoto.png'), // Βάλε την εικόνα σου
+                  image: AssetImage('assets/car_logo.png'), // Βάλε την εικόνα σου
                   fit: BoxFit.cover,
                 ),
               ),
               height: 100,
               width: 170,
-                  ),
+            ),
                 ),
                 const SizedBox(height: 20),
 
@@ -74,7 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 // Gender Selection
                 const Text(
                   "Gender:",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.deepPurple),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -116,7 +116,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 // Age Range Selection
                 const Text(
                   "Age Range:",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.deepPurple),
                 ),
                 Wrap(
                   spacing: 10.0,
@@ -124,6 +124,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ChoiceChip(
                       label: const Text('18-25'),
                       selected: selectedAgeRange == '18-25',
+                      backgroundColor: Colors.white,
                       onSelected: (selected) {
                         setState(() {
                           selectedAgeRange = '18-25';
@@ -139,6 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ChoiceChip(
                       label: const Text('26-45'),
                       selected: selectedAgeRange == '26-45',
+                      backgroundColor: Colors.white,
                       onSelected: (selected) {
                         setState(() {
                           selectedAgeRange = '26-45';
@@ -154,6 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ChoiceChip(
                       label: const Text('45+'),
                       selected: selectedAgeRange == '45+',
+                      backgroundColor: Colors.white,
                       onSelected: (selected) {
                         setState(() {
                           selectedAgeRange = '45+';

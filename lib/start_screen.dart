@@ -3,10 +3,12 @@ import 'package:mycarmanager_new/question1.dart';
 import 'home_page.dart';
 
 class  StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300], // Background color
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor, // Background color
       body: GestureDetector(
         onTap: () {
           // Action for tapping anywhere on the screen
@@ -48,10 +50,10 @@ class  StartScreen extends StatelessWidget {
                 "Press anywhere on the screen to start!",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
-                ),
+            color: Colors.blueGrey,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
               ),
             ),
             Spacer(flex: 2),

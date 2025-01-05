@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mycarmanager_new/home_page.dart';
+import 'package:mycarmanager_new/login_page.dart';
+import 'package:mycarmanager_new/start_screen.dart';
 import 'package:provider/provider.dart';
 import 'main.dart';
 
@@ -116,7 +117,10 @@ class _SettingsPageState extends State<SettingsPage> {
                     context: context,
                     icon: Icons.quiz,
                     title: 'Retake the Quiz',
-                    onTap: () {},
+                    onTap: () => showCustomDialog(
+                      context: context,
+                      child: buildRetakeQuizMenu(context),
+                    ),
                   ),
                   buildSettingsOption(
                     context: context,
@@ -293,6 +297,46 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+ Widget buildRetakeQuizMenu(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Text(
+            'Are you sure you want to Retake the Quiz?',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const StartScreen()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                child: const Text('Yes'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                child: const Text('No'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget buildSignOutMenu(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
@@ -313,7 +357,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   Navigator.pop(context);
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomePage()),
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.green),

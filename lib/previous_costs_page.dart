@@ -11,12 +11,13 @@ class PreviousCostsPage extends StatelessWidget {
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor, // Δυναμικό AppBar χρώμα
         elevation: 0,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Previous Costs',
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         iconTheme: IconThemeData(color: Theme.of(context).iconTheme.color),
       ),
